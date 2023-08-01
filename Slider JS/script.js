@@ -1,6 +1,7 @@
 function SliderJS(options) {
   const slider = document.querySelector(`#${options.id}`);
   const slides = slider.querySelectorAll('img');
+
   let currentSlide = 0;
   let interval;
 
@@ -39,7 +40,18 @@ function SliderJS(options) {
       prevBtn.textContent = 'Previous';
       prevBtn.addEventListener('click', () => {
         prevSlide();
+        console.dir(prevBtn);
+      });
+
+      const stopShow = document.createElement('button');
+      stopShow.textContent = 'Stop Show';
+      stopShow.addEventListener('click', () => {
         stopSlider();
+      });
+
+      const startShow = document.createElement('button');
+      startShow.textContent = 'Start Show';
+      startShow.addEventListener('click', () => {
         startSlider();
       });
 
@@ -47,11 +59,11 @@ function SliderJS(options) {
       nextBtn.textContent = 'Next';
       nextBtn.addEventListener('click', () => {
         nextSlide();
-        stopSlider();
-        startSlider();
       });
 
       controlsContainer.appendChild(prevBtn);
+      controlsContainer.appendChild(stopShow);
+      controlsContainer.appendChild(startShow);
       controlsContainer.appendChild(nextBtn);
       slider.appendChild(controlsContainer);
     }
@@ -71,10 +83,7 @@ function SliderJS(options) {
       slider.appendChild(controlsContainer);
     }
 
-    if (options.options.loop) {
-      startSlider();
-    }
   }
 
   initSlider();
-}
+} 

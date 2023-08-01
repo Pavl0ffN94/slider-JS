@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SliderJS</title>
 </head>
 <body>
-    <div class="slider" id="slider">
+    <div  id="slider">
         <img src="./img/10. Цветы.jpg" alt="Flower">
         <img src="./img/12. Вода.jpg" alt="Water">
         <img src="./img/16. Город.jpg" alt="City">
@@ -20,14 +20,13 @@
         new SliderJS ({
             id: 'slider',
             options:{
-                maxSlides: 2,
+                maxSlides: 4,
                 loop: true,
                 controls:true,
                 hideControls: false,
-                autoplay:true,
-                interval:4000
+                autoplay:false,
+                interval:1000
             }
-
         })
     </script>
 </body>
