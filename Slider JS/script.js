@@ -5,6 +5,8 @@ function SliderJS(options) {
   let currentSlide = 0;
   let interval;
 
+  slider.classList.add('slider-container')
+
   function showSlide(slideIndex) {
     slides.forEach((slide, index) => {
       slide.style.display = index === slideIndex ? 'block' : 'none';
@@ -78,7 +80,7 @@ function SliderJS(options) {
       });
 
       const controlsContainer = document.createElement('div');
-      controlsContainer.classList.add('slider-controls');
+      controlsContainer.classList.add('controls-hiddens');
       controlsContainer.appendChild(hideControlsBtn);
       slider.appendChild(controlsContainer);
     }

@@ -1,0 +1,23 @@
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 1000px;
+}
+
+
+.slider-controls{
+    position: absolute;
+    bottom: 10%;
+    left: 45%;
+    max-width: 500px;
+}
+
+.controls-hiddens{
+    position: absolute;
+    bottom: 5%;
+    left: 47%;
+}

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SliderJS</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div  id="slider">
+    <div id="slider">
         <img src="./img/10. Цветы.jpg" alt="Flower">
         <img src="./img/12. Вода.jpg" alt="Water">
         <img src="./img/16. Город.jpg" alt="City">
@@ -20,12 +21,12 @@
         new SliderJS ({
             id: 'slider',
             options:{
-                maxSlides: 4,
+                maxSlides: 1,
                 loop: true,
-                controls:true,
+                controls: true,
                 hideControls: false,
                 autoplay:false,
-                interval:1000
+                interval:3000
             }
         })
     </script>
