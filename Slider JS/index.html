@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SliderJS</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div id="slider">
-        <img src="./img/10. Цветы.jpg" alt="Flower">
-        <img src="./img/12. Вода.jpg" alt="Water">
-        <img src="./img/16. Город.jpg" alt="City">
-        <img src="./img/17. Мост.jpg" alt="Bridge">
-        <img src="./img/9. Пустыня.jpg" alt="Desert">
+      <img src="./img/10. Цветы.jpg" alt="Flower" />
+      <img src="./img/12. Вода.jpg" alt="Water" />
+      <img src="./img/16. Город.jpg" alt="City" />
+      <img src="./img/17. Мост.jpg" alt="Bridge" />
+      <img src="./img/9. Пустыня.jpg" alt="Desert" />
     </div>
-
 
     <script src="./script.js"></script>
     <script defer>
-        new SliderJS ({
-            id: 'slider',
-            options:{
-                maxSlides: 1,
-                loop: true,
-                controls: true,
-                hideControls: false,
-                autoplay:false,
-                interval:3000
-            }
-        })
+      new SliderJS({
+        id: 'slider',
+        options: {
+          maxSlides: 1,
+          loop: true,
+          controls: true,
+          hideControls: false,
+          autoplay: false,
+          interval: 3000,
+        },
+      });
     </script>
-</body>
+  </body>
 </html>

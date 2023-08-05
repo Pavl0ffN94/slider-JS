@@ -1,17 +1,34 @@
 function SliderJS(options) {
   const slider = document.querySelector(`#${options.id}`);
   const slides = slider.querySelectorAll('img');
+  const controlsContainer = document.createElement('div');
 
   let currentSlide = 0;
   let interval;
+  let touchStartX = 0;
 
-  slider.classList.add('slider-container')
+  slider.classList.add('slider-container');
 
   function showSlide(slideIndex) {
     slides.forEach((slide, index) => {
-      slide.style.display = index === slideIndex ? 'block' : 'none';
+      slide.style.opacity = index === slideIndex ? '1' : '0';
     });
   }
+
+  slider.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+  });
+
+  slider.addEventListener('touchend', (event) => {
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchDiff = touchEndX - touchStartX;
+
+    if (touchDiff > 50) {
+      prevSlide();
+    } else if (touchDiff < -50) {
+      nextSlide();
+    }
+  });
 
   function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
@@ -24,7 +41,9 @@ function SliderJS(options) {
   }
 
   function startSlider() {
-    interval = setInterval(nextSlide, options.options.interval || 3000);
+    interval = setInterval(() => {
+      nextSlide();
+    }, options.options.interval || 3000);
   }
 
   function stopSlider() {
@@ -34,15 +53,15 @@ function SliderJS(options) {
   function initSlider() {
     showSlide(currentSlide);
 
-    if (options.options.controls) {
-      const controlsContainer = document.createElement('div');
-      controlsContainer.classList.add('slider-controls');
+    controlsContainer.classList.add('slider-controls'); 
+    slider.appendChild(controlsContainer)
 
+    if (options.options.controls) {
       const prevBtn = document.createElement('button');
+      prevBtn.classList.add('btn-prev');
       prevBtn.textContent = 'Previous';
       prevBtn.addEventListener('click', () => {
         prevSlide();
-        console.dir(prevBtn);
       });
 
       const stopShow = document.createElement('button');
@@ -58,6 +77,7 @@ function SliderJS(options) {
       });
 
       const nextBtn = document.createElement('button');
+      nextBtn.classList.add('btn-next');
       nextBtn.textContent = 'Next';
       nextBtn.addEventListener('click', () => {
         nextSlide();
@@ -67,25 +87,29 @@ function SliderJS(options) {
       controlsContainer.appendChild(stopShow);
       controlsContainer.appendChild(startShow);
       controlsContainer.appendChild(nextBtn);
-      slider.appendChild(controlsContainer);
     }
 
     if (!options.options.hideControls) {
       const hideControlsBtn = document.createElement('button');
       hideControlsBtn.textContent = 'Hide Controls';
       hideControlsBtn.addEventListener('click', () => {
-        const controlsContainer = document.querySelector('.slider-controls');
-        controlsContainer.style.display =
-          controlsContainer.style.display === 'none' ? 'block' : 'none';
+        const buttons = document.querySelectorAll('button:not(.controls-hiddens)');
+        
+        buttons.forEach(button => {
+          button.style.opacity = button.style.opacity === '0' ? '1' : '0';
+        });
       });
 
-      const controlsContainer = document.createElement('div');
-      controlsContainer.classList.add('controls-hiddens');
-      controlsContainer.appendChild(hideControlsBtn);
-      slider.appendChild(controlsContainer);
+      const controlsHiddenContainer = document.createElement('div');
+      controlsHiddenContainer.classList.add('controls-hiddens');
+      controlsHiddenContainer.appendChild(hideControlsBtn);
+      slider.appendChild(controlsHiddenContainer);
     }
 
+    if (options.options.autoplay) {
+      startSlider();
+    }
   }
 
   initSlider();
-} 
+}

@@ -1,23 +1,55 @@
 .slider-container {
-    position: relative;
+    width: 100%;
     overflow: hidden;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 1000px;
-}
-
-
-.slider-controls{
+  }
+  
+  .slider-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .slider-controls {
     position: absolute;
     bottom: 10%;
-    left: 45%;
-    max-width: 500px;
-}
-
-.controls-hiddens{
+    left: 50%; 
+    transform: translateX(-50%); 
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .controls-hiddens {
     position: absolute;
-    bottom: 5%;
-    left: 47%;
-}
+    bottom: 2%;
+    left: 50%; 
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .btn-next {
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+    transform: translateY(-50%); 
+  }
+  
+  .btn-prev {
+    position: absolute;
+    top: 50%; 
+    left: 3%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+    transform: translateY(-50%); 
+  }
+  
+  .hiddens {
+    opacity: 0;
+  }
+  
