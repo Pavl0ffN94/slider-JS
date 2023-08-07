@@ -1,55 +1,27 @@
+
 .slider-container {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .slider-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-  }
-  
-  .slider-controls {
-    position: absolute;
-    bottom: 10%;
-    left: 50%; 
-    transform: translateX(-50%); 
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-  }
-  
-  .controls-hiddens {
-    position: absolute;
-    bottom: 2%;
-    left: 50%; 
-    transform: translateX(-50%);
-    transition: opacity 0.5s ease-in;
-  }
-  
-  .btn-next {
-    position: absolute;
-    top: 50%;
-    right: 3%;
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-    transform: translateY(-50%); 
-  }
-  
-  .btn-prev {
-    position: absolute;
-    top: 50%; 
-    left: 3%;
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-    transform: translateY(-50%); 
-  }
-  
-  .hiddens {
-    opacity: 0;
-  }
-  
+  display: flex;
+  overflow: hidden;
+  width: 98vw;
+  height: 98vh;
+  position: relative;
+  justify-content: center;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.carusel{
+  display: flex;
+  overflow: hidden;
+  width: 1650px;
+  transition: transform 04s ease-in;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.carusel img{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  margin: 0 20px;  
+}
