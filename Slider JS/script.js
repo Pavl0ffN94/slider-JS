@@ -40,12 +40,25 @@ console.log(arraySlidesItem);
     offset = 1;
   }
 
-  function nextSlide(){
+  function prevSlide(){
     document.onclick = null
     const repeatSlides = slider.querySelectorAll('img');
     let offset2= 0;
     repeatSlides.forEach((slide) => {
       slide.style.left = offset2 * slideWidth - 2100 + 'px';
+  });
+  setTimeout(()=>{
+    repeatSlides[0].remove();
+    draw();
+    document.onclick = nextSlide;
+  }, 1000)
+  }
+  function nextSlide(){
+    document.onclick = null
+    const repeatSlides = slider.querySelectorAll('img');
+    let offset2= 0;
+    repeatSlides.forEach((slide) => {
+      slide.style.left = offset2 * slideWidth + 2100 + 'px';
   });
   setTimeout(()=>{
     repeatSlides[0].remove();

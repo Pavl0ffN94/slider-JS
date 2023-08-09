@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
- .carusel{
+.carusel{
   transition: transform 0.5s ease-in;
   overflow: hidden;
   position: relative;
@@ -20,8 +20,9 @@
 .slider-item{
   object-fit: cover;
   height: auto;
+  width: 100%;
   position: absolute;
-  transition: all 1s ease-in;
+  transition: opacity 1s ease-in-out, left 1s ease-in-out;
   left: 0;
   top: 0;
   border: 1px solid red;
