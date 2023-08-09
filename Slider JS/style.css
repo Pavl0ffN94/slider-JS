@@ -10,31 +10,29 @@
 
  .carusel{
   transition: transform 0.5s ease-in;
-  display: flex;
   overflow: hidden;
+  position: relative;
   width: 90%;
+  border: 2px solid black;
 }
 
 
-/*  .slider-item{
-  width: auto;
+.slider-item{
+  object-fit: cover;
   height: auto;
   position: absolute;
   transition: all 1s ease-in;
-  left: 5%;
+  left: 0;
   top: 0;
- } */
+  border: 1px solid red;
+ } 
+ 
 
-
- .carusel img{
+/*  .carusel img{
   object-fit: cover;
   height: auto;
-} 
+}  */
 
-/* .slide{
-  flex-shrink: 0;
-  width: 100%;
-} */
 
 .slider-controls {
   position: absolute;
