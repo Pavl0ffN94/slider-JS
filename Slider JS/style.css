@@ -1,67 +1,37 @@
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .slider-container {
-  display: flex;
+position: relative;
+  margin: auto;
+  width: 60%;
   overflow: hidden;
-  width: 98vw;
-  height: 98vh;
-  position: relative;
-  justify-content: center;
+
 }
 
 .carusel{
-  transition: transform 0.5s ease-in;
-  overflow: hidden;
-  position: relative;
-  width: 90%;
-  border: 2px solid black;
+display: flex;
+width: 100%;
+height: 800px;
+transition: all 0.4s ease-in;
 }
-
 
 .slider-item{
   object-fit: cover;
   height: auto;
-  width: 100%;
-  position: absolute;
-  transition: opacity 1s ease-in-out, left 1s ease-in-out;
-  left: 0;
-  top: 0;
-  border: 1px solid red;
+  width: auto;
  } 
- 
-
-/*  .carusel img{
-  object-fit: cover;
-  height: auto;
-}  */
-
-
-.slider-controls {
-  position: absolute;
-  bottom: 10%;
-  left: 50%; 
-  transform: translateX(-50%); 
-  opacity: 1;
-  transition: opacity 0.5s ease-in;
-  display: flex;
-  justify-content: space-around;
-  width: 100px;
-}
-
-.controls-hiddens {
-  position: absolute;
-  bottom: 2%;
-  left: 50%; 
-  transform: translateX(-50%);
-  transition: opacity 0.5s ease-in;
-  cursor: pointer;
-}
 
 .btn-next {
   position: absolute;
   width: 29px;
   height: 29px;
   top: 50%;
-  right: 1%;
+  right: 10%;
   transition: opacity 0.5s ease-in;
   transform: translateY(-50%); 
   cursor: pointer;
@@ -75,37 +45,11 @@
   width: 29px;
   height: 29px;
   top: 50%; 
-  left: 1%;
+  left: 10%;
   transition: opacity 0.5s ease-in;
   transform: translateY(-50%); 
   cursor: pointer;
   background-image: url('./img/icons/left_arrow.svg');
   background-position: center;
   border-radius: 50%;
-}
-
-.btn-start{
-cursor: pointer;
-transition: opacity 0.5s ease-in;
-width: 25px;
-height: 25px;
-background-image: url('./img/icons/start.png');
-background-position: center;
-border-radius: 50%;
-}
-
-.btn-stop{
-cursor: pointer;
-transition: opacity 0.5s ease-in;
-width: 27px;
-height: 27px;
-background-image: url('./img/icons/stop.png');
-background-position: center;
-border-radius: 50%;
-}
-
-.btn-hide-controls{
-cursor: pointer;
-background-color: #000;
-color: #fff;
 }
