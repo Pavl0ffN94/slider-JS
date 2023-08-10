@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SliderJS</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="slider">
+      <img src="./img/bridge.jpg" alt="Flower" />
+      <img src="./img/city.jpg" alt="Water" />
+      <img src="./img/egle.jpg" alt="City" />
+      <img src="./img/flower.jpg" alt="Bridge" />
+      <img src="./img/water.jpg" alt="Desert" />
+    </div>
+
+    <script src="./script.js"></script>
+    <script defer>
+      new SliderJS({
+        id: 'slider',
+        options: {
+          maxSlides: 1,
+          loop: false,
+          controls: true,
+          hideControls: true,
+          autoplay: false,
+          interval: 1000,
+        },
+      });
+    </script>
+  </body>
+</html>
