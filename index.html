@@ -16,17 +16,9 @@
     </div>
 
     <script src="./script.js"></script>
-    <script defer>
-      new SliderJS({
-        id: 'slider',
-        options: {
-          maxSlides: 1,
-          loop: true,
-          controls: true,
-          hideControls: true,
-          autoplay: false,
-          interval: 1000,
-        },
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        SliderJS({id: 'slider', options: {loop: true}});
       });
     </script>
   </body>

@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', SliderJS(options) ) 
- function SliderJS(options) {
-  const slider = document.querySelector(`#${options.id}`);
+ function SliderJS({id, options}) {
+  const slider = document.querySelector('#' + id)
   const slides = slider.querySelectorAll('img');
   const carusel = document.createElement('div');
-  const loop = options.options.loop
+  const loop = options.loop
 
   slider.appendChild(carusel)
   slider.classList.add('slider-container');
